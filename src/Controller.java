@@ -86,7 +86,7 @@ public class Controller {
     }
 
     public void timerBox() {
-        timer.setText("Time: 00:00:00");
+        timer.setText("Aika: 00:00:00");
         start = System.currentTimeMillis();
     }
 

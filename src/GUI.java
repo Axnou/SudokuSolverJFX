@@ -7,9 +7,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileInputStream;
 
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -34,7 +36,10 @@ public class GUI extends Application {
         FXMLLoader loader = new FXMLLoader();
 
         //XML tiedoston osoite
-        String fxmlDocPath = "C:/Users/Gaming/IdeaProjects/SudokuSolverJFX/GUIScene.fxml";
+
+        String localDir = System.getProperty("user.dir");
+        File file = new File(localDir + "//GUIScene.fxml");
+        String fxmlDocPath = file.getPath();
         FileInputStream fxmlStream = new FileInputStream(fxmlDocPath);
 
         //GUI luodaan lukemalla FXML-tiedosto
