@@ -10,9 +10,8 @@ import javafx.scene.text.Font;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-
+//vastaa GUI:n interaktiivisten osien toiminnasta sekä metodeista, jotka asettavan GUI:n alkutilaan
 public class Controller {
-
 
     @FXML
     private GridPane grid0;
