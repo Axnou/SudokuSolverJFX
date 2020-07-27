@@ -58,6 +58,8 @@ public class GUI extends Application {
 
             @Override
             public void handle(long l) {
+                //if-lauseke varmistaa, että kellon päivitys ja GUI:n päivittäminen alkavat vasta kun nappia painetaan
+                //ja loppuvat kun sudokun ratkaisija on valmis
                 if(!controller.getClickable() && controller.getSolvingProcess().getT().isAlive()) {
                     controller.timerBoxUpdate();
                     update();
@@ -68,6 +70,12 @@ public class GUI extends Application {
 
     }
 
+    //Tarkistaa onko sudokutaulukossa ja GUI:ssa sama numero samassa kohtaa
+    //Jos ei, asettaa GUI:hin saman numeron.
+    //mikäli sudokun numero > 0 asettaa GUI:n ruudun reunojen väriksi vihreän.
+    //Jos sudokun numero = -1, asettaa GUI:n ruudun reunojen väriksi punaisen
+    //(tarkoittaa ruutuun asti ollaan päästy mutta sille ei löydetty sopivaa numeroa)
+    //jos sudokun numero = 0, tietää, että ruudussa ei olla käyty ja jättää sen ennalleen.
     public void update() {
 
         for (int i = 0; i < Sudoku.sudoku.length; i++) {

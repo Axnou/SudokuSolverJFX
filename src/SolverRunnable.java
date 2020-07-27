@@ -7,6 +7,7 @@ public class SolverRunnable implements Runnable {
         this.name = name;
     }
 
+    //luo threadin
     public void start () {
         if (t == null) {
             t = new Thread (this, name);
@@ -20,6 +21,7 @@ public class SolverRunnable implements Runnable {
 
     @Override
     public void run() {
+        //aloittaa ratkaisuprosessin omassa threadissaan
         Sudoku.solverGUI();
     }
 }

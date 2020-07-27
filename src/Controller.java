@@ -34,6 +34,8 @@ public class Controller {
 
     }
 
+
+    //Lisää GUI:hin kellon ja asettaa napin niin, että sitä voi klikata
     @FXML
     private void initialize() {
         grids = new GridPane[]{grid0, grid01, grid02};
@@ -76,15 +78,21 @@ public class Controller {
         }
     }
 
+    //metodi joka alkaa kun nappia painetaan
     public void pressAndSolve() {
         if (clickable) {
+            //varmistaa että nappia voi klikata vain kerran
             clickable = false;
+
+            //luo uuden threadin. Tarvitaan jotta GUI:n päivitys ja Sudokun ratkaisija voivat toimia saman aikaisesti,
+            //koska ratkaisija on loop, joka ei muuten tarjoaisi mahdollisuutta GUI:n päivitykseen
             solvingProcess = new SolverRunnable("Solver");
             start = System.currentTimeMillis();
             solvingProcess.start();
         }
     }
 
+    //kello
     public void timerBox() {
         timer.setText("Aika: 00:00:00");
         start = System.currentTimeMillis();

@@ -8,10 +8,12 @@ public class Cordinate {
         this.x = givenX;
     }
 
+    //palauttaa koordinaatin y (rivi)
     public int getY() {
         return y;
     }
 
+    //palauttaa koordinaatin x (sarake)
     public int getX() {
         return x;
     }
